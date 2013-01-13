@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title>Gift Card Exchange</title>
+  <link href='/reset.css' rel='stylesheet' type='text/css' /> 
+  <link href='/text.css' rel='stylesheet' type='text/css' /> 
+  <link href='/960.css' rel='stylesheet' type='text/css' /> 
+  <link href='/app.css' rel='stylesheet' type='text/css' /> 
+</head>
+<body>
+<div class="container_12">
+  <div class="grid_12">
+    <div class="grid_4 header_left"><a href="/">Cards.Graphs.Neo4j</a></div>
+    <div class="gird_8 header_right">
+		<% if @current_user %>
+		  [ <%= @current_user.username + ' / ' + @current_user.full_name %> ] <a href='/logout/'>logout</a>
+		<% else %>
+		  <%= erb :_login, :layout => false %>
+		  <a href="/reg/">register</a>
+		<% end %>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <div class="grid_12 tagline">
+	Gift Card Exchange is a SpeakeLabs project. it is still in its infancy; it is definitely not ready for primetime.</div>
+  <div class="clear"></div>
+
+  <div class="grid_12 flash_notice">
+    <%= flash[:notice] %>
+  </div>
+  <div class="clear"></div>
+  <div class="grid_12 flash_error">
+    <%= flash[:error] %>
+  </div>
+  <div class="clear"></div>
+  <%= yield %>
+  <div class="clear"></div>
+</div>
+</body>
+</html>

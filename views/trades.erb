@@ -1,0 +1,13 @@
+<div class="grid_12">
+  <% if @trades.length > 0 %>
+    <h3>possible trades we have come up with</h3>
+    <ul>
+    <% @trades.each do |trade| %>
+      <li><%= trade.inspect %></li>
+    <% end %>
+    </ul>
+  <% else %>
+    <h2>No trades match your wants, haves and those of other users.</h2>
+  <% end %>
+
+</div>

@@ -1,0 +1,41 @@
+
+body {background-color: #ffffff; font-family: helvetica,arial-new,verdana; }
+
+.container_12 { border-top: 5px solid #66ff99; }
+
+input[type='text'] { width: 220px ; font-size: 1.2em;}
+
+.login { color: #999999; text-align: right; }
+input[type='text'].login     { color: #999999; width: 125px ; font-size: 1em; border: 0px solid; border-bottom: 1px solid; text-align: left; }
+input[type='password'].login { color: #999999; width: 125px ; font-size: 1em; border: 0px solid; border-bottom: 1px solid; text-align: left; }
+
+input[type='text'].user     { color: #666666; width: 325px ; font-size: 1.0em; border: 0px solid; border-bottom: 1px solid; }
+input[type='password'].user { color: #666666; width: 325px ; font-size: 1.0em; border: 0px solid; border-bottom: 1px solid; }
+
+input[type='text'].set     { color: #666666; width: 325px ; font-size: 1.0em; border: 0px solid; border-bottom: 1px solid; }
+
+
+a:link    { text-decoration:underline; color: #ff9900;}
+a:visited { text-decoration:underline; color: #ff9900;}
+a:hover   { background-color: #ff9933; color: #fff; text-decoration: none; }
+a:active  { text-decoration:none; color: #66FF99; }
+
+.header_left { font-size: 2em; }
+.header_right { text-align: right; color: #888; }
+.tagline { text-align: center; color: #ff9933; font-style: italic; font-size: 0.9em; padding-bottom: 10px; }
+
+.flash_notice { font-size: 1.4em; color: #999999; text-align: center; }
+.flash_error  { font-size: 1.4em; color: #ff0000; text-align: center; }
+
+th { text-align: right; padding: 4px; padding-right: 10px; }
+
+.set_recipe td { padding: 5px; padding-right: 10px; }
+.set_recipe tr { border: 1px solid; }
+.set_recipe th { text-align: center; color: #ffffff; background-color: #999; }
+
+.acquire td { padding: 5px; padding-right: 10px; color: #444; }
+.acquire tr { border-bottom: 1px solid; }
+.acquire th { text-align: left; color: #ffffff; background-color: #999; padding: 5px; font-weight: 900; }
+
+.middle { text-align: center; }
+.light  { color: #444; }

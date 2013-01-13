@@ -1,0 +1,11 @@
+<div class="login">
+  <% if @current_user %>
+    <a href='/logout/'>logout</a> | <a href='/profile/'>profile</a> | <a href='/about/'>about</a><br />
+  <% else %>
+    <form name="input" action="/login/" method="post">
+      u: <input class = "login" type="text" name="username" /> 
+      p: <input class = "login" type="password" name="password" />
+      <input type="submit" value="login" />
+    </form>
+  <% end %>
+</div>

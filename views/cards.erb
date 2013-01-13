@@ -1,0 +1,31 @@
+<div class="grid_12">
+  <% if @cards_has.length > 0 %>
+    <h3>Cards you have:</h3>
+    <ul>
+    <% @cards_has.each do |card| %>
+      <li><%= card[0]['data']['name'] %></li>
+    <% end %>
+    </ul>
+  <% else %>
+    <h2>No cards in your 'have' list yet!</h2>
+  <% end %>
+
+  <hr>
+
+  <% if @cards_wants.length > 0 %>
+    <h3>Cards you want:</h3><ul>
+    <% @cards_wants.each do |card| %>
+      <li><%= card[0]['data']['name'] %></li>
+    <% end %>
+    </ul>
+  <% else %>
+    <h2>No cards in your 'want' list yet!</h2>
+  <% end %>
+  
+  <hr>
+  <h2>other card suggestions you might be willing to trade for:</h2>
+  <hr>
+  <p><a href="/cards/want/new/">enter a new card that you would like to have</a></p>
+  <p><a href="/cards/have/new/">enter a new card that you have and would be willing to part with in a trade</a></p>
+  <p><a href="/cards/">list all your wants and haves, and possible trade combinations.</a></p>
+</div>
