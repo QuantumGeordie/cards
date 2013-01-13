@@ -21,11 +21,12 @@ configure :development do
 end
 
 configure :production do
-  DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/db/db.sqlite3")
+  DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3:memory")
   Neo.setup("http://localhost:7474")
 end
 
 configure :test do
+  # DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/db/db.test.sqlite3")
   DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/db/db.test.sqlite3")
   Neo.setup("http://localhost:7476")
 end
