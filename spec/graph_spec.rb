@@ -41,15 +41,11 @@ describe 'Graph DB' do
     Card.create_user_wants_relationship(@user2, @card6)
     Card.create_user_wants_relationship(@user3, @card7)
     Card.create_user_wants_relationship(@user3, @card8)
-    Card.create_user_wants_relationship(@user4, @card1)    
+    Card.create_user_wants_relationship(@user4, @card1)
   end
 
   describe 'neo4j' do
     
-    # before(:each) do
-    #    #Neo.execute_query("START n=node(*) MATCH n-[r?]-() WHERE ID(n) <> 0 DELETE n,r")
-    #  end
-    #     
     it 'should create a couple of cards and relationships between them' do
       setup_data
 
@@ -184,7 +180,7 @@ describe 'Graph DB' do
     all_cards.count.should == 8
   end
   
-  it 'should delete a has relationship' do
+  xit 'should delete a has relationship' do
     setup_data
     
     user1_relationships = Neo.get_node_relationships(@user1)
