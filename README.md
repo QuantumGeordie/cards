@@ -7,4 +7,4 @@ Sinatra RB project.
 + neo4j start/stop
   
 ### Travis-ci.org
-[![Build Status](https://travis-ci.org/QuantumGeordie/cards.png?branch=master)](https://travis-ci.org/QuantumGeordie/cards)
+[![Build Status](https://travis-ci.org/QuantumGeordie/cards.png)](https://travis-ci.org/QuantumGeordie/cards)

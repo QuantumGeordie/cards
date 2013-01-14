@@ -16,7 +16,7 @@ module Card
   
   def self.delete_relationship(rel_id)
     rel = Neo.get_relationship(rel_id)
-    Neo.delete_relationship(rel) 
+    Neo.delete_relationship(rel)
   end
   
   def self.find_card_id_by_name(name)
@@ -61,8 +61,16 @@ module Card
     ret = Neo.execute_query(cypher)
     ret['data']
   end
-  
+
   def self.remove_wanted_card(card_id)
     delete_relationship(card_id)
+  end
+
+  def self.remove_has_card(user_id, card_id)
+    u_to_c = Card.find_user_card_relationship(user_id, card_id)
+    rel = u_to_c.first.first['self']
+    rel_id = rel.split('/').last.to_i
+    rel = Neo.get_relationship(rel_id)
+    Neo.delete_relationship(rel)
   end
 end

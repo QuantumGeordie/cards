@@ -35,6 +35,14 @@ module Neo
   def self.get_node_relationships(node)
     @neo.get_node_relationships(node)
   end
+
+  def self.get_relationship(id)
+    @neo.get_relationship(id)
+  end
+
+  def self.delete_relationship(relationship)
+    @neo.delete_relationship(relationship)
+  end
   
   # def self.get_node_relationship(node, in_or_out, relationship_type)
   #   @neo.get_node_relationships(node, in_or_out, relationship_type)
