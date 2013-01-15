@@ -62,11 +62,7 @@ module Card
     ret['data']
   end
 
-  def self.remove_wanted_card(card_id)
-    delete_relationship(card_id)
-  end
-
-  def self.remove_has_card(user_id, card_id)
+  def self.remove_card_relationship(user_id, card_id)
     u_to_c = Card.find_user_card_relationship(user_id, card_id)
     rel = u_to_c.first.first['self']
     rel_id = rel.split('/').last.to_i

@@ -192,15 +192,49 @@ describe 'Graph DB' do
     cards = Card.find_cards_by_user_has(user_id)
     cards.count.should == 2
 
-    Card.remove_has_card(user_id, card_id)
-    
+    Card.remove_card_relationship(user_id, card_id)
+
     cards = Card.find_cards_by_user_has(user_id)
     cards.count.should == 1
-    
+
   end
   
-  xit 'should delete a wants relationship' do
+  it 'should delete a wants relationship' do
     setup_data
+
+    user1_relationships = Neo.get_node_relationships(@user1)
+    user1_relationships.count.should == 4
+
+    user_id = @user2['self'].split('/').last.to_i
+    card_id = @card1['self'].split('/').last.to_i
+
+    cards = Card.find_cards_by_user_wants(user_id)
+    cards.count.should == 3
+
+    has_expectations = ['Samys', 'Soccer.com', 'Banana Republic']
+    names = []
+    cards.each do |card|
+      names << card.first['data']['name']
+    end
+    names.sort!
+    has_expectations.sort!
+
+    0.upto(2) do |i|
+      has_expectations[i].should == names[i]
+    end
+
+    Card.remove_card_relationship(user_id, card_id)
+
+    cards = Card.find_cards_by_user_wants(user_id)
+    cards.count.should == 2
+
+    has_expectations = ['Soccer.com', 'Banana Republic']
+    names = []
+    cards.each do |card|
+      names << card.first['data']['name']
+    end
+    names.sort!
+    has_expectations.sort!
   end
   
 end
