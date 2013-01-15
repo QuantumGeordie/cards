@@ -4,7 +4,7 @@
         <h3>Cards you have:</h3>
         <ul>
         <% @cards_has.each do |card| %>
-          <li><%= card[0]['data']['name'] %> (<a href="#">remove</a>)</li>
+          <li><%= card[0]['data']['name'] %> (<a href="/cards/have/remove/<%= card[0]['self'].split('/').last %>">remove</a>)</li>
         <% end %>
         </ul>
       <% else %>

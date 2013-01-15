@@ -11,6 +11,22 @@ get '/cards/have/new/' do
   erb :new_card
 end
 
+get '/cards/have/remove/:id' do
+
+  card = Card.get_card_by_id(params[:id].to_i)
+  if card.length == 0
+    flash[:error] = "no card found for params[:id]!"
+    redirect '/'
+  else
+    #puts card.inspect
+    card_id = card['self'].split('/').last
+    Card.remove_card_relationship(@current_user.neo_id, card_id)
+
+    flash[:notice] = "so you don't want that card any more. no big deal."
+    redirect '/'
+  end
+end
+
 post '/cards/have/new/' do
   name = params[:name]
   amount = params[:amount]
