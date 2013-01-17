@@ -42,7 +42,7 @@ require File.dirname(__FILE__) + '/models/init.rb'
 
 configure :development, :production do 
   DataMapper.auto_upgrade!
-  # DataMapper.auto_migrate!
+  #DataMapper.auto_migrate!
   # Neo.execute_query("START n=node(*) MATCH n-[r?]-() WHERE ID(n) <> 0 DELETE n,r")
 end
 
