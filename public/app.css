@@ -22,7 +22,7 @@ a:active  { text-decoration:none; color: #66FF99; }
 
 .header_left { font-size: 2em; }
 .header_right { text-align: right; color: #888; }
-.tagline { text-align: center; color: #ff9933; font-style: italic; font-size: 0.9em; padding-bottom: 10px; }
+.tagline { color: #ff9933; font-style: italic; font-size: 0.9em; padding-bottom: 10px; text-align: center; }
 
 .flash_notice { font-size: 1.4em; color: #999999; text-align: center; }
 .flash_error  { font-size: 1.4em; color: #ff0000; text-align: center; }
