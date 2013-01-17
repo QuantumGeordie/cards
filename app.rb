@@ -22,7 +22,7 @@ end
 
 configure :production do
   DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/db/db.sqlite3")
-  Neo.setup("http://localhost:7476")
+  Neo.setup(ENV['NEO4J_URL'] || "http://localhost:7476")
 end
 
 configure :test do
