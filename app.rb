@@ -8,7 +8,7 @@ require 'dm-validations'
 require 'neography'
 
 require './lib/neo/Neo'
-require 'models/Card'
+require './models/Card'
 
 set :session_secret, "tron rides again"
 enable :sessions
