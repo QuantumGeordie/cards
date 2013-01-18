@@ -6,6 +6,7 @@ require 'rack-flash'
 require 'dm-migrations'
 require 'dm-validations'
 require 'neography'
+require 'text'
 
 require './lib/neo/Neo'
 require './models/Card'

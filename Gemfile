@@ -10,6 +10,7 @@ gem 'rack-flash'
 gem 'rake'
 gem 'neography'
 gem 'awesome_print'
+gem 'text'
 
 group :test do
   gem "webrat"

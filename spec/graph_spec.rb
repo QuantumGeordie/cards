@@ -235,6 +235,53 @@ describe 'Graph DB' do
     end
     names.sort!
     has_expectations.sort!
+
+    0.upto(1) do |i|
+      has_expectations[i].should == names[i]
+    end
+
+  end
+
+  it 'should do some matching' do
+    setup_data
+
+    sims = Card.similar_cards("Samy's")
+    sims.count.should == 1
+    sims.first.should == "Samys"
+
+    sims = Card.similar_cards("samy's")
+    sims.count.should == 1
+    sims.first.should == "Samys"
+
+    sims = Card.similar_cards("samys")
+    sims.count.should == 2
+    sims.include?("Samys").should be_true
+    sims.include?("Macys").should be_true
+
+    sims = Card.similar_cards("Soccer")
+    sims.count.should == 1
+    sims.first.should == "Soccer.com"
+
+    sims = Card.similar_cards("Amazon.com Book Store")
+    sims.count.should == 1
+    sims.first.should == "Amazon"
+  end
+
+  it 'should create cards and relationships with to existing cards' do
+    setup_data
+
+    user_id = @user4['self'].split('/').last.to_i
+    cards = Card.find_cards_by_user_has(user_id)
+    cards.count.should == 2
+
+    Card.user_has_card(@user4, "Soccer", 35)
+
+    all_cards = Card.get_all_cards
+    all_cards.count.should == 8
+
+    cards = Card.find_cards_by_user_has(user_id)
+    cards.count.should == 3
+
   end
   
 end
